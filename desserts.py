@@ -12,7 +12,7 @@ class Cupcake:
       self.price = price
       self.qty = qty
 
-      self.cache[self.name] = self
+      self.cache[name] = self
 
     def __repr__(self):
         """Human-readable printout for debugging."""
@@ -44,8 +44,10 @@ class Cupcake:
 
     @classmethod
     def get(cls, name):
+      
       if name in cls.cache:
         return cls.cache[name]
+      
       else:
         print("Sorry, that cupcake doesn't exist")
 
