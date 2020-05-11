@@ -32,6 +32,18 @@ class Cupcake:
       else:
         self.qty -= amount
 
+    @staticmethod
+    def scale_recipe(ingredients, amount):
+      
+      scaled_recipe = []
+      
+      for ingredient in ingredients:
+        scaled_recipe.append(tuple([ingredient[0], ingredient[1] * amount]))
+
+      return scaled_recipe
+
+
+
 
 if __name__ == '__main__':
     import doctest
@@ -45,11 +57,11 @@ if __name__ == '__main__':
     if result.failed == 0:
         print('ALL TESTS PASSED')
 
-c = Cupcake('Strawberry Fields', 'strawberry', 5.0)
-print(c.name)
-print(c.flavor)
-print(c.qty)
+# c = Cupcake('Strawberry Fields', 'strawberry', 5.0)
+# print(c.name)
+# print(c.flavor)
+# print(c.qty)
 
-print(Cupcake.cache)
-c.add_stock(10)
-print(Cupcake.cache)
+# print(Cupcake.cache)
+# c.add_stock(10)
+# print(Cupcake.cache)
