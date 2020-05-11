@@ -42,7 +42,22 @@ class Cupcake:
 
       return scaled_recipe
 
+    @classmethod
+    def get(cls, name):
+      if name in cls.cache:
+        return cls.cache[name]
+      else:
+        print("Sorry, that cupcake doesn't exist")
 
+class Brownie(Cupcake):
+
+  def __init__(self, name, price):
+    super().__init__(name, 'chocolate', price, qty = 0)
+  
+  def __repr__(self):
+        """Human-readable printout for debugging."""
+
+        return f'<Brownie name="{self.name}" qty={self.qty}>'
 
 
 if __name__ == '__main__':
